@@ -1,0 +1,117 @@
+/* Profile Incomplete Popup Styles */
+
+.profile-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.profile-popup-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.profile-popup {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.profile-popup.visible {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.profile-popup-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-popup-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.profile-popup-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.profile-popup-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(220, 10%, 20%);
+  margin: 0;
+  text-align: center;
+}
+
+.profile-popup-message {
+  color: hsl(220, 10%, 45%);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-popup-actions {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.profile-popup-button {
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-popup-button-primary {
+  background: var(--gradient-brand);
+  color: white;
+  box-shadow: 0 4px 12px rgba(var(--color-500-rgb), 0.2);
+}
+
+.profile-popup-button-primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 123, 0, 0.3);
+}
+
+.profile-popup-button-secondary {
+  background: hsl(220, 10%, 95%);
+  color: hsl(220, 10%, 45%);
+}
+
+.profile-popup-button-secondary:hover {
+  background: hsl(220, 10%, 90%);
+}

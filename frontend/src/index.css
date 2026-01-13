@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Modern Color Palette with HSL */
+:root {
+  /* Brand Gradient Palette */
+  --color-100: #FFDAB8;
+  --color-200: #FFC28A;
+  --color-300: #FFA44F;
+  --color-400: #FF932E;
+  --color-500: #FF7B00;
+  --color-600: #D16500;
+
+  --color-100-rgb: 255, 218, 184;
+  --color-200-rgb: 255, 194, 138;
+  --color-300-rgb: 255, 164, 79;
+  --color-400-rgb: 255, 147, 46;
+  --color-500-rgb: 255, 123, 0;
+  --color-600-rgb: 209, 101, 0;
+
+  /* Brand Tokens (used across UI) */
+  --color-primary: var(--color-500);
+  --color-primary-light: var(--color-400);
+  --color-primary-dark: var(--color-600);
+
+  --color-accent: var(--color-400);
+  --color-accent-light: var(--color-300);
+
+  --gradient-brand: linear-gradient(135deg, var(--color-100) 0%, var(--color-400) 45%, var(--color-600) 100%);
+  --gradient-brand-reverse: linear-gradient(135deg, var(--color-600) 0%, var(--color-400) 55%, var(--color-100) 100%);
+  --gradient-brand-soft: linear-gradient(135deg,
+      rgba(var(--color-200-rgb), 0.22),
+      rgba(var(--color-600-rgb), 0.14));
+  --gradient-brand-light: linear-gradient(135deg, #FFF5EB 0%, #FFE0C2 100%);
+
+  /* Neutral Colors */
+  --color-bg-primary: hsl(220, 20%, 98%);
+  --color-bg-secondary: hsl(0, 0%, 100%);
+  --color-text-primary: hsl(220, 20%, 10%);
+  --color-text-secondary: hsl(220, 10%, 45%);
+  --color-border: hsl(220, 15%, 90%);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: var(--color-text-primary);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Custom Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.input-focus-ring {
+  transition: all 0.2s ease-in-out;
+}
+
+.input-focus-ring:focus-within {
+  box-shadow: 0 0 0 4px rgba(var(--color-500-rgb), 0.2);
+  border-color: var(--color-primary);
+}
